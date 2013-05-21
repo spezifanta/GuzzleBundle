@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Ddeboer\GuzzleBundle;
+namespace Reservix\GuzzleBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class DdeboerGuzzleBundle extends Bundle
+class ReservixGuzzleBundle extends Bundle
 {
 }

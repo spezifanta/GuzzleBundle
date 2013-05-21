@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddeboer\GuzzleBundle\DependencyInjection;
+namespace Reservix\GuzzleBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\Definition\Processor;
 
-class DdeboerGuzzleExtension extends Extension
+class ReservixGuzzleExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -28,7 +28,7 @@ class DdeboerGuzzleExtension extends Extension
 
         if ($config['logging']) {
             $container->findDefinition('guzzle.data_collector')
-                ->addTag('data_collector', array('template' => 'DdeboerGuzzleBundle:Collector:guzzle', 'id' => 'guzzle'));
+                ->addTag('data_collector', array('template' => 'ReservixGuzzleBundle:Collector:guzzle', 'id' => 'guzzle'));
         }
     }
 }

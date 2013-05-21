@@ -1,21 +1,21 @@
-DdeboerGuzzleBundle
+ReservixGuzzleBundle
 ===================
 
-DdeboerGuzzleBundle is a Symfony2 bundle for integrating the [Guzzle PHP library](http://github.com/guzzle/guzzle) in your project.
+ReservixGuzzleBundle is a Symfony2 bundle for integrating the [Guzzle PHP library](http://github.com/guzzle/guzzle) in your project.
 
 ## Installation
 
 Installation is a quick (I promise!) 4 step process:
 
-1. Download DdeboerGuzzleBundle
+1. Download ReservixGuzzleBundle
 2. Configure the Autoloader
 3. Enable the Bundle
-4. Configure the DdeboerGuzzleBundle
+4. Configure the ReservixGuzzleBundle
 
-### Step 1: Download DdeboerGuzzleBundle
+### Step 1: Download ReservixGuzzleBundle
 
 Ultimately, the GuzzleBundle files should be downloaded to the
-`vendor/bundles/Ddeboer/GuzzleBundle` directory.
+`vendor/bundles/Reservix/GuzzleBundle` directory.
 
 This can be done in several ways, depending on your preference. The first
 method is the standard Symfony2 method.
@@ -29,9 +29,9 @@ Add the following lines in your `deps` file:
     git=git://github.com/guzzle/guzzle.git
     target=guzzle
 
-[DdeboerGuzzleBundle]
-    git=git://github.com/ddeboer/GuzzleBundle.git
-    target=bundles/Ddeboer/GuzzleBundle
+[ReservixGuzzleBundle]
+    git=git://github.com/reservix/GuzzleBundle.git
+    target=bundles/Reservix/GuzzleBundle
 ```
 
 Now, run the vendors script to download the bundle:
@@ -46,13 +46,13 @@ If you prefer instead to use git submodules, then run the following:
 
 ``` bash
 $ git submodule add git://github.com/guzzle/guzzle.git vendor/guzzle
-$ git submodule add git://github.com/ddeboer/GuzzleBundle vendor/bundles/Ddeboer/GuzzleBundle
+$ git submodule add git://github.com/reservix/GuzzleBundle vendor/bundles/Reservix/GuzzleBundle
 $ git submodule update --init
 ```
 
 ### Step 2: Configure the Autoloader
 
-Add the `Guzzle` and `Ddeboer` namespace to your autoloader:
+Add the `Guzzle` and `Reservix` namespace to your autoloader:
 
 ``` php
 <?php
@@ -60,7 +60,7 @@ Add the `Guzzle` and `Ddeboer` namespace to your autoloader:
 $loader->registerNamespaces(array(
     // ...
     'Guzzle'           => __DIR__.'/../vendor/guzzle/src',
-    'Ddeboer'          => __DIR__.'/../vendor/bundles',
+    'Reservix'          => __DIR__.'/../vendor/bundles',
 ));
 ```
 
@@ -76,16 +76,16 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Ddeboer\GuzzleBundle\DdeboerGuzzleBundle(),
+        new Reservix\GuzzleBundle\ReservixGuzzleBundle(),
     );
 }
 ```
 
-### Step 4: Configure the DdeboerGuzzleBundle
+### Step 4: Configure the ReservixGuzzleBundle
 
 ``` yaml
 # app/config/config.yml
-ddeboer_guzzle: 
+reservix_guzzle:
     service_builder:
         configuration_file: "%kernel.root_dir%/config/webservices.xml"
 ```
